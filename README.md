@@ -1,5 +1,5 @@
 # testGPS
-Proof of concept (send data within distance from gps point)
+Proof of concept (send data only if in range of gps point)
 
 install process:
 
