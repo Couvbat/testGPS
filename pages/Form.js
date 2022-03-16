@@ -42,7 +42,8 @@ export default Form = ({navigation, route}) => {
 
   return (
     <View style={style.page}>
-      <Text style={style.siteName}>{route.params.name}</Text>
+      <Text style={style.siteName}>{site.name}</Text>
+      <Text style={style.siteRange}>distance maximum du site : {site.validRange} mètres</Text>
       <TextInput style={style.dataInput}></TextInput>
       {isInRange() ? (
         <Button title='Envoyer donnée valide' ></Button>
@@ -65,6 +66,10 @@ const style = {
   siteName:{
     textAlign: "center",
     fontSize: 24,
+  },
+  siteRange:{
+    textAlign: "center",
+    fontSize: 18,
   },
 };
 
