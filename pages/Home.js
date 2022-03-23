@@ -4,33 +4,14 @@ import {
   Text,
   View,
 } from "react-native";
-import { useState } from "react";
+import { useSelector } from "react-redux";
 
-export default Home = ({ navigation }) => {
-  
-  const [sites, setSites] = useState([
-    {
-      id: 1,
-      name: "CCI",
-      validRange:200,
-      coords: { latitude: 47.0620766, longitude: 2.366622 },
-    },
-    {
-      id: 2,
-      name: "Gare de Bourges",
-      validRange:5000,
-      coords: { latitude: 47.0943909, longitude: 2.3931675 },
-    },
-    {
-      id: 3,
-      name: "Gare de Mehun-sur-Yèvre",
-      validRange:50,
-      coords: { latitude: 47.1350699, longitude: 2.1903179 },
-    },
-  ]);
+const Home = ({ navigation }) => {
 
-  const handleClick = (id) => {
-    navigation.push("Diagnostic", { id });
+  const sites = useSelector( (state) => state.sites)
+
+  const handleClick = id => {
+    navigation.push('Site', {id});
   };
 
   return (
@@ -68,3 +49,5 @@ const style = {
     padding: 15,
   },
 };
+
+export default Home;

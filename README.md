@@ -10,3 +10,4 @@ npm install @react-navigation/native-stack
 npm install redux react-redux
 expo install expo-location
 npm i haversine-distance
+npm install @react-native-async-storage/async-storage
